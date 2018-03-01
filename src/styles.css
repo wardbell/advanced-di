@@ -1,1 +1,14 @@
 /* You can add global styles to this file, and also import other style files */
+app-animals {
+  display: inline-block;
+}
+
+button {
+  font-size: 100%;
+  margin-bottom: 10px;
+}
+
+.card img {
+  height: 100px;
+  /* width: 100px; */
+}
