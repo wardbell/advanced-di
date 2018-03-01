@@ -1,0 +1,13 @@
+<button mat-raised-button color="accent" type="button" (click)="speak()">
+  {{shouldSpeak ? 'What do they say?' : 'Be quiet!'}}
+</button>
+<button mat-raised-button color="accent" type="button" (click)="hideShow()">
+    {{parent.show ? "Hide" : "Show"}}
+</button>
+
+<div>
+
+  <!--  Your animal components are projected here -->
+  <ng-content></ng-content>
+
+</div>

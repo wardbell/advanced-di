@@ -1,13 +1,17 @@
-<div style="text-align:center">
+<div>
   <app-toolbar></app-toolbar>
-  <h1>
-    Advanced Angular DI Example
-  </h1>
+
   <app-animals>
-    <cat animal></cat>
-    <dog animal></dog>
-    <rock animal></rock>
-    <fox #animal animal></fox>
-    <viking animal></viking>
+    <div *ngIf="show" class="animals">
+
+      <cat    #item animal></cat>
+      <dog          animal></dog>
+      <rock   #item       ></rock>
+      <fox    #item animal></fox>
+      <viking       animal></viking>
+      <p      #item animal></p>
+
+    </div>
   </app-animals>
+
 </div>

@@ -5,7 +5,7 @@ import { Animal } from './animal';
   // tslint:disable-next-line:component-selector
   selector: 'dog',
   template: `
-  <div class="card">
+  <div>
     <img src="../assets/dog.jpg"/>
     <h3>{{saying}}</h3>
   </div>
@@ -14,11 +14,18 @@ import { Animal } from './animal';
     { provide: Animal, useExisting: DogComponent }
   ]
 })
-export class DogComponent implements Animal {
+// Subclasses Animal
+export class DogComponent extends Animal {
 
+  name = 'Dog';
   saying: string;
 
   speak() {
     this.saying = 'Woof';
   }
+
+  clear() {
+    this.saying = '';
+  }
+
 }

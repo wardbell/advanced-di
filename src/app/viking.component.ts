@@ -5,7 +5,7 @@ import { Animal } from './animal';
   // tslint:disable-next-line:component-selector
   selector: 'viking',
   template: `
-  <div class="card">
+  <div>
     <img src="../assets/johnpapa.png"/>
     <h3>{{saying}}</h3>
   </div>
@@ -14,11 +14,17 @@ import { Animal } from './animal';
     { provide: Animal, useExisting: VikingComponent }
   ]
 })
+// Doesn't officially implement Animal interface
 export class VikingComponent {
 
+  name = 'Viking';
   saying: string;
 
   speak() {
     this.saying = 'Aiiii!!!';
+  }
+
+  clear() {
+    this.saying = '';
   }
 }

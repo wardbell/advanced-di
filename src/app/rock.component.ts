@@ -9,4 +9,7 @@ import { Component } from '@angular/core';
   </div>
   `
 })
-export class RockComponent {}
+export class RockComponent {
+  name = 'rock';
+
+}

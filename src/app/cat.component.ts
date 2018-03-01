@@ -5,7 +5,7 @@ import { Animal } from './animal';
   // tslint:disable-next-line:component-selector
   selector: 'cat',
   template: `
-  <div class="card">
+  <div>
     <img src="../assets/cat.jpeg"/>
     <h3>{{saying}}</h3>
   </div>
@@ -16,9 +16,14 @@ import { Animal } from './animal';
 })
 export class CatComponent implements Animal {
 
+  name = 'Cat';
   saying: string;
 
   speak() {
     this.saying = 'Meow';
+  }
+
+  clear() {
+    this.saying = '';
   }
 }
