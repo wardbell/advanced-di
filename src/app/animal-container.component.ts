@@ -7,10 +7,10 @@ import { AnimalDirective } from './animal.directive';
 @Component({
   selector: 'app-animals',
   template: `
-  <div>
-    <button (click)="speak()">What do they say?</button>
+  <button mat-raised-button color="accent" type="button" (click)="speak()">What do they say?</button>
+  <div class="item-container">
+    <ng-content></ng-content>
   </div>
-  <ng-content></ng-content>
   `
 })
 export class AnimalContainerComponent implements AfterContentInit {
