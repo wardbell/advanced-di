@@ -10,6 +10,5 @@ import { Component } from '@angular/core';
   `
 })
 export class RockComponent {
-  name = 'rock';
-
+  // A rock just sits
 }

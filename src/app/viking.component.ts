@@ -6,7 +6,7 @@ import { Animal } from './animal';
   selector: 'viking',
   template: `
   <div>
-    <img src="../assets/johnpapa.png"/>
+    <img src="../assets/viking.png"/>
     <h3>{{saying}}</h3>
   </div>
   `,

@@ -31,10 +31,10 @@ export class AnimalContainerComponent implements AfterContentInit {
   // ElementRef of the `animal` attribute directive
   @ContentChildren(AnimalDirective, {read: ElementRef}) directiveElementsQL: QueryList<ElementRef>;
 
-  // Animal "service" of the attribute directive's attached component
+  // Animal "interface" of the attribute directive's attached component
   @ContentChildren(AnimalDirective, {read: Animal}) directiveAnimalsQL: QueryList<Animal>;
 
-  // Any projected component with an Animal "service" in its injector
+  // Any projected component with an Animal "interface" in its injector
   @ContentChildren(Animal) animalsQL: QueryList<Animal>;
 
   ngAfterContentInit() {
@@ -45,15 +45,19 @@ export class AnimalContainerComponent implements AfterContentInit {
     const directiveAnimals  = this.directiveAnimalsQL.toArray();
     const animals           = this.animalsQL.toArray();
 
-    this.animals = itemRefs;
+    this.animals = animals;  // try each array ^^^
 
+    // ElementRef grants access to the `native` DOM element.
     directiveElements.forEach(elRef => {
       const el: HTMLElement = elRef.nativeElement;
+
+      // Torture the DOM element directly.
       el.style.backgroundColor = 'black';
       el.style.color = 'white';
       el.style.margin = '0.2em';
     });
 
+    // Subscribe to changes in the QueryList
     this.animalsQL.changes.subscribe(() => {
       this.animals = this.animalsQL.toArray();
       console.log(`Projected animals list changed. Count=${this.animals.length}`);

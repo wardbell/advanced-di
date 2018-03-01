@@ -27,6 +27,7 @@
 app-animals {
   .animals {
     display: flex;
+    margin-left: 2em;
     flex-flow: row wrap;
     & img {
       height: 150px;
