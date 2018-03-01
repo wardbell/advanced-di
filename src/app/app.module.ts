@@ -12,8 +12,7 @@ import { VikingComponent } from './Viking.component';
 import {
   MatButtonModule,
   MatIconModule,
-  MatToolbarModule,
-  MatCardModule
+  MatToolbarModule
 } from '@angular/material';
 import { ToolbarComponent } from './toolbar/toolbar.component';
 
@@ -34,8 +33,7 @@ import { ToolbarComponent } from './toolbar/toolbar.component';
     BrowserModule,
     MatButtonModule,
     MatIconModule,
-    MatToolbarModule,
-    MatCardModule,
+    MatToolbarModule
   ],
   providers: [],
   bootstrap: [AppComponent]
