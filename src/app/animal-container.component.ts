@@ -8,7 +8,7 @@ import { AnimalDirective } from './animal.directive';
   selector: 'app-animals',
   template: `
   <div>
-    <button (click)="speak()">What do they say?</button>
+  <button mat-raised-button color="accent" type="button" (click)="speak()">What do they say?</button>
   </div>
   <ng-content></ng-content>
   `
