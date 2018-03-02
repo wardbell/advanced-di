@@ -65,7 +65,7 @@ export class AnimalContainerComponent implements AfterContentInit {
   }
 
 
-  /** Tell animals what to do */
+  /** Ask the animals to speak */
   speak() {
     this.animals.forEach(animal => {
       try {
