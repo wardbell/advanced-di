@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Injector, AfterViewInit } from '@angular/core';
 import { Animal } from './animal';
 
 @Component({
@@ -14,10 +14,19 @@ import { Animal } from './animal';
     { provide: Animal, useExisting: CatComponent }
   ]
 })
-export class CatComponent implements Animal {
+export class CatComponent implements Animal, AfterViewInit {
+
+  constructor(private injector: Injector) {}
 
   name = 'Cat';
   saying: string;
+
+  // Debug here and find the Animal token among the
+  // CatComponent provider tokens: injector.elDef.element.allProviders
+  ngAfterViewInit() {
+    const a = this.injector.get(Animal);
+    const c = this.injector.get(CatComponent);
+  }
 
   speak() {
     this.saying = 'Meow';
